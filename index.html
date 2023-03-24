@@ -1,0 +1,1591 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="root">
+      <div class="toggle-sidebar active">
+        <div class="logo-burgericon">
+          <svg
+            id="btn-burger"
+            width="22"
+            height="10"
+            viewBox="0 0 22 10"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect width="22" height="2" rx="1" fill="#1B1D21" />
+            <rect y="8" width="22" height="2" rx="1" fill="#1B1D21" />
+          </svg>
+        </div>
+      </div>
+      <div class="sidebar">
+        <div class="sidebar-main-logo">
+          <div class="sidebar-logo">
+            <svg
+              width="36"
+              height="36"
+              viewBox="0 0 36 36"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+            >
+              <rect width="35.4756" height="36" fill="url(#pattern0)" />
+              <defs>
+                <pattern
+                  id="pattern0"
+                  patternContentUnits="objectBoundingBox"
+                  width="1"
+                  height="1"
+                >
+                  <use
+                    xlink:href="#image0_224_72786"
+                    transform="matrix(0.001982 0 0 0.00195312 -0.00739081 0)"
+                  />
+                </pattern>
+                <image
+                  id="image0_224_72786"
+                  width="512"
+                  height="512"
+                  xlink:href="data:image/png;base64,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"
+                />
+              </defs>
+            </svg>
+
+            <div class="logo-name">TeamDolphins</div>
+          </div>
+
+          <div class="logo-burgericon">
+            <svg
+              id="btn-burger-inside"
+              width="22"
+              height="10"
+              viewBox="0 0 22 10"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect width="22" height="2" rx="1" fill="#1B1D21" />
+              <rect y="8" width="22" height="2" rx="1" fill="#1B1D21" />
+            </svg>
+          </div>
+        </div>
+
+        <div class="toolbar-main">
+          <div class="toolbar-main-items">
+            <div class="toolbar-item">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M7.24485 14.7815L10.238 10.8913L13.6522 13.5732L16.5812 9.79291"
+                  stroke="#808191"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <circle
+                  cx="19.9954"
+                  cy="4.20023"
+                  r="1.9222"
+                  stroke="#808191"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M14.9245 3.12013H7.65675C4.64531 3.12013 2.77803 5.25286 2.77803 8.2643V16.3467C2.77803 19.3581 4.60869 21.4817 7.65675 21.4817H16.2609C19.2723 21.4817 21.1396 19.3581 21.1396 16.3467V9.30778"
+                  stroke="#808191"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <div class="toolbar-name">New Feed</div>
+            </div>
+            <div class="toolbar-item">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M8.27002 14.9519L9.8627 9.8627L14.9519 8.27002L13.3593 13.3593L8.27002 14.9519Z"
+                  stroke="#808191"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <circle
+                  cx="11.611"
+                  cy="11.611"
+                  r="9.61098"
+                  stroke="#808191"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+
+              <div class="toolbar-name">Explore</div>
+            </div>
+            <div class="toolbar-item">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M19 21L12 16L5 21V5C5 4.46957 5.21071 3.96086 5.58579 3.58579C5.96086 3.21071 6.46957 3 7 3H17C17.5304 3 18.0391 3.21071 18.4142 3.58579C18.7893 3.96086 19 4.46957 19 5V21Z"
+                  stroke="#808191"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+
+              <div class="toolbar-name">Bookmarks</div>
+            </div>
+            <div class="toolbar-item">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M15.1707 2.67703C15.3542 2.6002 15.5511 2.56064 15.75 2.56064C15.9489 2.56064 16.1458 2.6002 16.3293 2.67703C16.5117 2.7534 16.6772 2.86509 16.8163 3.00565L20.9943 7.18369C21.1349 7.32276 21.2466 7.48827 21.323 7.67068C21.3998 7.85416 21.4394 8.05109 21.4394 8.25001C21.4394 8.44893 21.3998 8.64586 21.323 8.82934C21.2466 9.01174 21.1349 9.17723 20.9944 9.31629L9.53033 20.7803C9.38968 20.921 9.19891 21 9 21H4.5C4.10218 21 3.72065 20.842 3.43934 20.5607C3.15804 20.2794 3 19.8978 3 19.5V15.3105M15.1707 2.67703C14.9882 2.75342 14.8227 2.86513 14.6836 3.00572L15.1707 2.67703ZM4.5 15.3107V19.5H8.68934L19.9394 8.24999L19.9353 8.24598L15.75 4.06065L15.746 4.06473L4.5 15.3107Z"
+                  fill="#808191"
+                />
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M8.25 20.25C8.25 19.8358 8.58579 19.5 9 19.5H20.25C20.6642 19.5 21 19.8358 21 20.25C21 20.6642 20.6642 21 20.25 21H9C8.58579 21 8.25 20.6642 8.25 20.25Z"
+                  fill="#808191"
+                />
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M12.2197 5.46967C12.5126 5.17678 12.9874 5.17678 13.2803 5.46967L18.5303 10.7197C18.8232 11.0126 18.8232 11.4874 18.5303 11.7803C18.2374 12.0732 17.7626 12.0732 17.4697 11.7803L12.2197 6.53033C11.9268 6.23744 11.9268 5.76256 12.2197 5.46967Z"
+                  fill="#808191"
+                />
+              </svg>
+
+              <div class="toolbar-name">My Posts</div>
+            </div>
+          </div>
+
+          <div class="toolbar-divider">
+            <svg
+              width="176"
+              height="1"
+              viewBox="0 0 176 1"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect width="176" height="1" fill="#E4E4E4" />
+            </svg>
+          </div>
+          <div class="toolbar-trending-tag">
+            <div class="trending-tag-title">Trending Tag</div>
+            <div class="trending-tag-item">
+              <div class="trending-tag-item-name"># JavaScript</div>
+              <div class="trending-tag-item-number">202</div>
+            </div>
+            <div class="trending-tag-item">
+              <div class="trending-tag-item-name"># Node JS</div>
+              <div class="trending-tag-item-number">23</div>
+            </div>
+
+            <div class="trending-tag-item">
+              <div class="trending-tag-item-name"># React JS</div>
+              <div class="trending-tag-item-number">43</div>
+            </div>
+
+            <div class="trending-tag-item">
+              <div class="trending-tag-item-name"># Node JS</div>
+              <div class="trending-tag-item-number">33</div>
+            </div>
+            <div class="trending-tag-see-all">
+              <div class="trending-tag-see-all-name">See All</div>
+              <div class="trending-tag-see-all-show">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10 8L14 12L10 16"
+                    stroke="#808191"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="dark-mode">
+          <div class="sun">
+            <svg
+              width="24"
+              height="25"
+              viewBox="0 0 24 25"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1 12.9158H2"
+                stroke="#7FBA7A"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M4.2 5.11582L4.9 5.81582"
+                stroke="#7FBA7A"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M12 1.91577V2.91577"
+                stroke="#7FBA7A"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M19.8 5.11582L19.1 5.81582"
+                stroke="#7FBA7A"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M23 12.9158H22"
+                stroke="#7FBA7A"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M19.8 20.7157L19.1 20.0157"
+                stroke="#7FBA7A"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M12 23.9158V22.9158"
+                stroke="#7FBA7A"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M4.2 20.7157L4.9 20.0157"
+                stroke="#7FBA7A"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <circle
+                cx="12"
+                cy="12.9158"
+                r="6"
+                stroke="#7FBA7A"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
+          <div onclick="darkModeSetting()" class="toggle-mode">
+            <svg
+              width="66"
+              height="29"
+              viewBox="0 0 66 29"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect
+                x="2"
+                y="0.915771"
+                width="64"
+                height="24"
+                rx="12"
+                fill="#F0F3F6"
+              />
+              <g filter="url(#filter0_d_395_7)">
+                <circle cx="14" cy="12.9158" r="10" fill="white" />
+              </g>
+              <circle cx="14" cy="12.9158" r="6" fill="#3F8CFF" />
+              <defs>
+                <filter
+                  id="filter0_d_395_7"
+                  x="0"
+                  y="0.915771"
+                  width="28"
+                  height="28"
+                  filterUnits="userSpaceOnUse"
+                  color-interpolation-filters="sRGB"
+                >
+                  <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                  <feColorMatrix
+                    in="SourceAlpha"
+                    type="matrix"
+                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                    result="hardAlpha"
+                  />
+                  <feOffset dy="2" />
+                  <feGaussianBlur stdDeviation="2" />
+                  <feColorMatrix
+                    type="matrix"
+                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.124153 0"
+                  />
+                  <feBlend
+                    mode="normal"
+                    in2="BackgroundImageFix"
+                    result="effect1_dropShadow_395_7"
+                  />
+                  <feBlend
+                    mode="normal"
+                    in="SourceGraphic"
+                    in2="effect1_dropShadow_395_7"
+                    result="shape"
+                  />
+                </filter>
+              </defs>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="main-content">
+        <div class="content-header">
+          <div class="header-bar">
+            <div class="search-bar">
+              <svg
+                class="icon-search"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M11.6115 2C6.30323 2 2 6.20819 2 11.3993C2 16.5903 6.30323 20.7985 11.6115 20.7985C13.8819 20.7985 15.9684 20.0287 17.613 18.7415L20.7371 21.7886L20.8202 21.8586C21.1102 22.0685 21.5214 22.0446 21.7839 21.7873C22.0726 21.5043 22.072 21.0459 21.7825 20.7636L18.6952 17.7523C20.2649 16.0794 21.2231 13.8487 21.2231 11.3993C21.2231 6.20819 16.9198 2 11.6115 2ZM11.6115 3.44774C16.1022 3.44774 19.7426 7.00776 19.7426 11.3993C19.7426 15.7908 16.1022 19.3508 11.6115 19.3508C7.12086 19.3508 3.48044 15.7908 3.48044 11.3993C3.48044 7.00776 7.12086 3.44774 11.6115 3.44774Z"
+                  fill="#11142D"
+                />
+              </svg>
+              <input class="input-search" placeholder="Search" type="text" />
+            </div>
+            <div class="notifications">
+              <div class="bell">
+                <svg
+                  class="bell-ring"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M3.50083 13.7871V13.5681C3.53295 12.9202 3.7406 12.2925 4.10236 11.7496C4.7045 11.0975 5.1167 10.2983 5.29571 9.43598C5.29571 8.7695 5.29571 8.0935 5.35393 7.42703C5.65469 4.21842 8.82728 2 11.9611 2H12.0387C15.1725 2 18.345 4.21842 18.6555 7.42703C18.7137 8.0935 18.6555 8.7695 18.704 9.43598C18.8854 10.3003 19.2972 11.1019 19.8974 11.7591C20.2618 12.2972 20.4698 12.9227 20.4989 13.5681V13.7776C20.5206 14.648 20.2208 15.4968 19.6548 16.1674C18.907 16.9515 17.8921 17.4393 16.8024 17.5384C13.607 17.8812 10.383 17.8812 7.18762 17.5384C6.09914 17.435 5.08576 16.9479 4.33521 16.1674C3.778 15.4963 3.48224 14.6526 3.50083 13.7871Z"
+                    stroke="#808191"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M9.55493 20.8518C10.0542 21.4784 10.7874 21.884 11.5922 21.9787C12.3971 22.0734 13.2072 21.8495 13.8433 21.3564C14.0389 21.2106 14.2149 21.041 14.3672 20.8518"
+                    stroke="#808191"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <div class="profile">
+                <svg
+                  width="48"
+                  height="48"
+                  viewBox="0 0 48 48"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle cx="24" cy="24" r="24" fill="#0049C6" />
+                  <path
+                    d="M36.9037 26.7907V29.1196L33.2616 32.5232L24.0299 23.3738V16.7198L30.4673 13.9636V20.4116L36.9037 26.7907Z"
+                    fill="#A0D7E7"
+                  />
+                  <path
+                    d="M33.2615 32.5232L28.4512 36.9863L17.5802 26.2122V13.9636L24.0299 16.7198V23.3738L33.2615 32.5232Z"
+                    fill="#A0D7E7"
+                  />
+                  <path
+                    d="M28.4471 36.9863L25.0774 40.1322C24.486 40.6838 23.5636 40.6838 22.9722 40.1322L11.1428 29.1196V13.5222C11.1435 13.0101 11.404 12.5326 11.836 12.2516C12.268 11.9706 12.8136 11.9237 13.2879 12.1269L17.5802 13.9636V26.2122L28.4471 36.9863Z"
+                    fill="#3F8CFF"
+                  />
+                  <path
+                    d="M36.9037 13.5222V26.7907L30.4673 20.4116V13.9636L34.7585 12.1269C35.2329 11.9237 35.7785 11.9706 36.2105 12.2516C36.6425 12.5326 36.903 13.0101 36.9037 13.5222Z"
+                    fill="#3F8CFF"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="content-body">
+          <div class="content-body-wrapper">
+            <div class="slide-show">
+              <div class="slide-title">
+                <div class="slide-text">Trending Channels</div>
+                <div class="slide-button">
+                  <div onclick="HandleSlideShow('prev')" class="btn-prev">
+                    <svg
+                      class="path"
+                      width="6"
+                      height="10"
+                      viewBox="0 0 6 10"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M5 9L1 5L5 1"
+                        stroke="black"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </div>
+                  <div onclick="HandleSlideShow('next')" class="btn-next">
+                    <svg
+                      class="path"
+                      width="6"
+                      height="10"
+                      viewBox="0 0 6 10"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M1 1L5 5L1 9"
+                        stroke="#11142D"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div class="channels-list"></div>
+            </div>
+            <div class="blogs-content">
+              <div class="list-blogs">
+                <div class="post">
+                  <div class="post-heading">
+                    <div class="post-creator">
+                      <svg
+                        width="48"
+                        height="48"
+                        viewBox="0 0 48 48"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <circle cx="24" cy="24" r="24" fill="#0049C6" />
+                        <path
+                          d="M36.9037 26.7907V29.1196L33.2616 32.5232L24.0299 23.3738V16.7198L30.4673 13.9636V20.4116L36.9037 26.7907Z"
+                          fill="#A0D7E7"
+                        />
+                        <path
+                          d="M33.2615 32.5232L28.4512 36.9863L17.5802 26.2122V13.9636L24.0299 16.7198V23.3738L33.2615 32.5232Z"
+                          fill="#A0D7E7"
+                        />
+                        <path
+                          d="M28.4471 36.9863L25.0774 40.1322C24.486 40.6838 23.5636 40.6838 22.9722 40.1322L11.1428 29.1196V13.5222C11.1435 13.0101 11.404 12.5326 11.836 12.2516C12.268 11.9706 12.8136 11.9237 13.2879 12.1269L17.5802 13.9636V26.2122L28.4471 36.9863Z"
+                          fill="#3F8CFF"
+                        />
+                        <path
+                          d="M36.9037 13.5222V26.7907L30.4673 20.4116V13.9636L34.7585 12.1269C35.2329 11.9237 35.7785 11.9706 36.2105 12.2516C36.6425 12.5326 36.903 13.0101 36.9037 13.5222Z"
+                          fill="#3F8CFF"
+                        />
+                      </svg>
+                      <div class="creator-info">
+                        <div class="creator-name">Đặng Tuấn Phong</div>
+                        <div class="post-time">12 minus ago</div>
+                      </div>
+                    </div>
+                    <div class="post-btn-save">
+                      <svg
+                        width="15"
+                        height="19"
+                        viewBox="0 0 15 19"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M13.9971 17.9194L7.73554 13.4506L1.47394 17.9194V3.61906C1.47394 3.14497 1.66242 2.6903 1.99793 2.35507C2.33344 2.01984 2.78849 1.83151 3.26297 1.83151H12.2081C12.6826 1.83151 13.1376 2.01984 13.4732 2.35507C13.8087 2.6903 13.9971 3.14497 13.9971 3.61906V17.9194Z"
+                          stroke="#808191"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="post-body">
+                    <div class="post-title">
+                      Why You Should Use Node.js for Ecommerce: Pros and Cons
+                    </div>
+                    <div class="post-paragraph">
+                      Node.js is a JavaScript runtime environment which
+                      developers use to build scalable network applications.
+                      <br />
+                      You can use it in various software, including ecommerce
+                      platforms.
+                      <br />To deliver high performance …
+                    </div>
+                    <div class="creator-language">
+                      <div class="programing-language">JavaScript</div>
+                      <div class="programing-language">Node JS</div>
+
+                      <div class="programing-language">Express JS</div>
+
+                      <div class="programing-language">+3</div>
+                    </div>
+                  </div>
+                  <div class="post-footer">
+                    <div class="post-reaction">
+                      <div class="reaction-item">
+                        <svg
+                          width="16"
+                          height="12"
+                          viewBox="0 0 16 12"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M1 6C1 6 3.8 1 8 1C12.2 1 15 6 15 6C15 6 12.2 11 8 11C3.8 11 1 6 1 6Z"
+                            stroke="#808191"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <ellipse
+                            cx="8.00008"
+                            cy="6.00004"
+                            rx="2.1"
+                            ry="2.14286"
+                            stroke="#808191"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                        <div class="reaction-item-number">23</div>
+                      </div>
+                      <div class="reaction-item">
+                        <svg
+                          width="14"
+                          height="14"
+                          viewBox="0 0 14 14"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M13.2503 4.62997L9.47416 4.05515L7.78468 0.469621C7.48896 -0.15654 6.5108 -0.15654 6.21508 0.469621L4.52648 4.05515L0.749444 4.62997C0.0346335 4.73907 -0.254965 5.66318 0.264738 6.19491L2.99799 8.98559L2.35317 12.9268C2.23156 13.6731 2.98049 14.2461 3.62268 13.8931L6.99988 12.033L10.378 13.894C11.0149 14.2433 11.77 13.6795 11.6475 12.9277L11.0026 8.98651L13.7359 6.19583C14.2547 5.66318 13.9651 4.73907 13.2503 4.62997Z"
+                            fill="#808191"
+                          />
+                        </svg>
+
+                        <div class="reaction-item-number">23</div>
+                      </div>
+                      <div class="reaction-item">
+                        <svg
+                          width="14"
+                          height="14"
+                          viewBox="0 0 14 14"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M7 0C3.15 0 0 2.7125 0 6.125C0 9.5375 3.15 12.25 7 12.25C7.35 12.25 7.7 12.25 7.9625 12.1625L12.25 14V10.15C13.3 9.1 14 7.7 14 6.125C14 2.7125 10.85 0 7 0Z"
+                            fill="#808191"
+                          />
+                        </svg>
+                        <div class="reaction-item-number">23</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="post-saved">
+                  <div class="post-heading">
+                    <div class="post-creator">
+                      <svg
+                        width="48"
+                        height="48"
+                        viewBox="0 0 48 48"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <circle cx="24" cy="24" r="24" fill="#0049C6" />
+                        <path
+                          d="M36.9037 26.7907V29.1196L33.2616 32.5232L24.0299 23.3738V16.7198L30.4673 13.9636V20.4116L36.9037 26.7907Z"
+                          fill="#A0D7E7"
+                        />
+                        <path
+                          d="M33.2615 32.5232L28.4512 36.9863L17.5802 26.2122V13.9636L24.0299 16.7198V23.3738L33.2615 32.5232Z"
+                          fill="#A0D7E7"
+                        />
+                        <path
+                          d="M28.4471 36.9863L25.0774 40.1322C24.486 40.6838 23.5636 40.6838 22.9722 40.1322L11.1428 29.1196V13.5222C11.1435 13.0101 11.404 12.5326 11.836 12.2516C12.268 11.9706 12.8136 11.9237 13.2879 12.1269L17.5802 13.9636V26.2122L28.4471 36.9863Z"
+                          fill="#3F8CFF"
+                        />
+                        <path
+                          d="M36.9037 13.5222V26.7907L30.4673 20.4116V13.9636L34.7585 12.1269C35.2329 11.9237 35.7785 11.9706 36.2105 12.2516C36.6425 12.5326 36.903 13.0101 36.9037 13.5222Z"
+                          fill="#3F8CFF"
+                        />
+                      </svg>
+                      <div class="creator-info">
+                        <div class="creator-name">Đặng Tuấn Phong</div>
+                        <div class="post-time">12 minus ago</div>
+                      </div>
+                    </div>
+                    <div class="post-btn-save">
+                      <svg
+                        width="16"
+                        height="19"
+                        viewBox="0 0 16 19"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M14.6737 17.9194L8.32768 13.4505L1.98169 17.9194V3.61903C1.98169 3.14494 2.17272 2.69027 2.51275 2.35504C2.85278 2.01981 3.31396 1.83148 3.79483 1.83148H12.8605C13.3414 1.83148 13.8026 2.01981 14.1426 2.35504C14.4826 2.69027 14.6737 3.14494 14.6737 3.61903V17.9194Z"
+                          fill="#FBCC13"
+                          stroke="#FBCC13"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="post-body">
+                    <div class="post-title">
+                      Why You Should Use Node.js for Ecommerce: Pros and Cons
+                    </div>
+                    <div class="post-paragraph">
+                      Node.js is a JavaScript runtime environment which
+                      developers use to build scalable network applications.
+                      <br />
+                      You can use it in various software, including ecommerce
+                      platforms.
+                      <br />To deliver high performance …
+                    </div>
+                    <div class="creator-language">
+                      <div class="programing-language">JavaScript</div>
+                      <div class="programing-language">Node JS</div>
+
+                      <div class="programing-language">Express JS</div>
+
+                      <div class="programing-language">+3</div>
+                    </div>
+                  </div>
+                  <div class="post-footer">
+                    <div class="post-reaction">
+                      <div class="reaction-item">
+                        <svg
+                          width="16"
+                          height="12"
+                          viewBox="0 0 16 12"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M1 6C1 6 3.8 1 8 1C12.2 1 15 6 15 6C15 6 12.2 11 8 11C3.8 11 1 6 1 6Z"
+                            stroke="#808191"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <ellipse
+                            cx="8.00008"
+                            cy="6.00004"
+                            rx="2.1"
+                            ry="2.14286"
+                            stroke="#808191"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                        <div class="reaction-item-number">23</div>
+                      </div>
+                      <div class="reaction-item">
+                        <svg
+                          width="14"
+                          height="14"
+                          viewBox="0 0 14 14"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M13.2503 4.62997L9.47416 4.05515L7.78468 0.469621C7.48896 -0.15654 6.5108 -0.15654 6.21508 0.469621L4.52648 4.05515L0.749444 4.62997C0.0346335 4.73907 -0.254965 5.66318 0.264738 6.19491L2.99799 8.98559L2.35317 12.9268C2.23156 13.6731 2.98049 14.2461 3.62268 13.8931L6.99988 12.033L10.378 13.894C11.0149 14.2433 11.77 13.6795 11.6475 12.9277L11.0026 8.98651L13.7359 6.19583C14.2547 5.66318 13.9651 4.73907 13.2503 4.62997Z"
+                            fill="#808191"
+                          />
+                        </svg>
+
+                        <div class="reaction-item-number">23</div>
+                      </div>
+                      <div class="reaction-item">
+                        <svg
+                          width="14"
+                          height="14"
+                          viewBox="0 0 14 14"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M7 0C3.15 0 0 2.7125 0 6.125C0 9.5375 3.15 12.25 7 12.25C7.35 12.25 7.7 12.25 7.9625 12.1625L12.25 14V10.15C13.3 9.1 14 7.7 14 6.125C14 2.7125 10.85 0 7 0Z"
+                            fill="#808191"
+                          />
+                        </svg>
+                        <div class="reaction-item-number">23</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="post-recommendation">
+                  <div class="post-recommendation-text">Recommend for you</div>
+                  <div class="post-recommendation-creator">
+                    <div class="creator-recommend">
+                      <img
+                        class="creator-recommend-pic"
+                        src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Z2lybCUyMHNtaWxpbmd8ZW58MHx8MHx8&w=1000&q=80"
+                        width="120px"
+                        height="163px"
+                        alt=""
+                      />
+                      <div class="creator-recommend-info">
+                        <div class="creator-recommend-title">
+                          <div class="creator-recommend-title-name">
+                            Vinh Ngốc
+                          </div>
+                          <div class="creator-recommend-reaction">
+                            <div class="creator-recommend-stars">
+                              <svg
+                                width="14"
+                                height="14"
+                                viewBox="0 0 14 14"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M13.2503 4.62997L9.47416 4.05515L7.78468 0.469621C7.48896 -0.15654 6.5108 -0.15654 6.21508 0.469621L4.52648 4.05515L0.749444 4.62997C0.0346335 4.73907 -0.254965 5.66318 0.264738 6.19491L2.99799 8.98559L2.35317 12.9268C2.23156 13.6731 2.98049 14.2461 3.62268 13.8931L6.99988 12.033L10.3779 13.894C11.0149 14.2433 11.7699 13.6795 11.6475 12.9277L11.0026 8.98651L13.7359 6.19583C14.2547 5.66318 13.9651 4.73907 13.2503 4.62997Z"
+                                  fill="#808191"
+                                />
+                              </svg>
+                              <div class="creator-recommend-stars-number">
+                                23
+                              </div>
+                            </div>
+                            <div class="creator-recommend-views">
+                              <svg
+                                width="16"
+                                height="12"
+                                viewBox="0 0 16 12"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  fill-rule="evenodd"
+                                  clip-rule="evenodd"
+                                  d="M1 6C1 6 3.8 1 8 1C12.2 1 15 6 15 6C15 6 12.2 11 8 11C3.8 11 1 6 1 6Z"
+                                  stroke="#808191"
+                                  stroke-width="2"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                />
+                                <ellipse
+                                  cx="8.00008"
+                                  cy="6.00004"
+                                  rx="2.1"
+                                  ry="2.14286"
+                                  stroke="#808191"
+                                  stroke-width="2"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                />
+                              </svg>
+                              <div class="creator-recommend-views-number">
+                                23
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="creator-recommend-subsAndvideos">
+                          <div class="creator-recommend-subs">
+                            536K followers
+                          </div>
+                          <div class="creator-recommend-videos">120 videos</div>
+                        </div>
+                        <div class="creator-language">
+                          <div class="programing-language">JavaScript</div>
+                          <div class="programing-language">Node JS</div>
+                          <div class="programing-language">Express JS</div>
+                        </div>
+                        <div class="creator-recommend-follow">Follow</div>
+                      </div>
+                    </div>
+                    <div class="creator-recommend">
+                      <img
+                        class="creator-recommend-pic"
+                        src="https://gray-wbtv-prod.cdn.arcpublishing.com/resizer/J24dqxnHiYkFwYa9aVPUxI2I5Us=/1200x1800/smart/filters:quality(85)/cloudfront-us-east-1.images.arcpublishing.com/gray/KH3LZJL6X5DL7L3IVYBTFOZLM4.jpg"
+                        width="120px"
+                        height="163px"
+                        alt=""
+                      />
+                      <div class="creator-recommend-info">
+                        <div class="creator-recommend-title">
+                          <div class="creator-recommend-title-name">
+                            Dương Ngêch
+                          </div>
+                          <div class="creator-recommend-reaction">
+                            <div class="creator-recommend-stars">
+                              <svg
+                                width="14"
+                                height="14"
+                                viewBox="0 0 14 14"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M13.2503 4.62997L9.47416 4.05515L7.78468 0.469621C7.48896 -0.15654 6.5108 -0.15654 6.21508 0.469621L4.52648 4.05515L0.749444 4.62997C0.0346335 4.73907 -0.254965 5.66318 0.264738 6.19491L2.99799 8.98559L2.35317 12.9268C2.23156 13.6731 2.98049 14.2461 3.62268 13.8931L6.99988 12.033L10.3779 13.894C11.0149 14.2433 11.7699 13.6795 11.6475 12.9277L11.0026 8.98651L13.7359 6.19583C14.2547 5.66318 13.9651 4.73907 13.2503 4.62997Z"
+                                  fill="#808191"
+                                />
+                              </svg>
+                              <div class="creator-recommend-stars-number">
+                                23
+                              </div>
+                            </div>
+                            <div class="creator-recommend-views">
+                              <svg
+                                width="16"
+                                height="12"
+                                viewBox="0 0 16 12"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  fill-rule="evenodd"
+                                  clip-rule="evenodd"
+                                  d="M1 6C1 6 3.8 1 8 1C12.2 1 15 6 15 6C15 6 12.2 11 8 11C3.8 11 1 6 1 6Z"
+                                  stroke="#808191"
+                                  stroke-width="2"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                />
+                                <ellipse
+                                  cx="8.00008"
+                                  cy="6.00004"
+                                  rx="2.1"
+                                  ry="2.14286"
+                                  stroke="#808191"
+                                  stroke-width="2"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                />
+                              </svg>
+                              <div class="creator-recommend-views-number">
+                                23
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="creator-recommend-subsAndvideos">
+                          <div class="creator-recommend-subs">
+                            536K followers
+                          </div>
+                          <div class="creator-recommend-videos">120 videos</div>
+                        </div>
+                        <div class="creator-language">
+                          <div class="programing-language">JavaScript</div>
+                          <div class="programing-language">Node JS</div>
+                          <div class="programing-language">Express JS</div>
+                        </div>
+                        <div class="creator-recommend-follow">Follow</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="post-saved">
+                  <div class="post-heading">
+                    <div class="post-creator">
+                      <svg
+                        width="48"
+                        height="48"
+                        viewBox="0 0 48 48"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <circle cx="24" cy="24" r="24" fill="#0049C6" />
+                        <path
+                          d="M36.9037 26.7907V29.1196L33.2616 32.5232L24.0299 23.3738V16.7198L30.4673 13.9636V20.4116L36.9037 26.7907Z"
+                          fill="#A0D7E7"
+                        />
+                        <path
+                          d="M33.2615 32.5232L28.4512 36.9863L17.5802 26.2122V13.9636L24.0299 16.7198V23.3738L33.2615 32.5232Z"
+                          fill="#A0D7E7"
+                        />
+                        <path
+                          d="M28.4471 36.9863L25.0774 40.1322C24.486 40.6838 23.5636 40.6838 22.9722 40.1322L11.1428 29.1196V13.5222C11.1435 13.0101 11.404 12.5326 11.836 12.2516C12.268 11.9706 12.8136 11.9237 13.2879 12.1269L17.5802 13.9636V26.2122L28.4471 36.9863Z"
+                          fill="#3F8CFF"
+                        />
+                        <path
+                          d="M36.9037 13.5222V26.7907L30.4673 20.4116V13.9636L34.7585 12.1269C35.2329 11.9237 35.7785 11.9706 36.2105 12.2516C36.6425 12.5326 36.903 13.0101 36.9037 13.5222Z"
+                          fill="#3F8CFF"
+                        />
+                      </svg>
+                      <div class="creator-info">
+                        <div class="creator-name">Đặng Tuấn Phong</div>
+                        <div class="post-time">12 minus ago</div>
+                      </div>
+                    </div>
+                    <div class="post-btn-save">
+                      <svg
+                        width="16"
+                        height="19"
+                        viewBox="0 0 16 19"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M14.6737 17.9194L8.32768 13.4505L1.98169 17.9194V3.61903C1.98169 3.14494 2.17272 2.69027 2.51275 2.35504C2.85278 2.01981 3.31396 1.83148 3.79483 1.83148H12.8605C13.3414 1.83148 13.8026 2.01981 14.1426 2.35504C14.4826 2.69027 14.6737 3.14494 14.6737 3.61903V17.9194Z"
+                          fill="#FBCC13"
+                          stroke="#FBCC13"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="post-body">
+                    <div class="post-title">
+                      Why You Should Use Node.js for Ecommerce: Pros and Cons
+                    </div>
+                    <div class="post-paragraph">
+                      Node.js is a JavaScript runtime environment which
+                      developers use to build scalable network applications.
+                      <br />
+                      You can use it in various software, including ecommerce
+                      platforms.
+                      <br />To deliver high performance …
+                    </div>
+                    <div class="creator-language">
+                      <div class="programing-language">JavaScript</div>
+                      <div class="programing-language">Node JS</div>
+
+                      <div class="programing-language">Express JS</div>
+
+                      <div class="programing-language">+3</div>
+                    </div>
+                  </div>
+                  <div class="post-footer">
+                    <div class="post-reaction">
+                      <div class="reaction-item">
+                        <svg
+                          width="16"
+                          height="12"
+                          viewBox="0 0 16 12"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M1 6C1 6 3.8 1 8 1C12.2 1 15 6 15 6C15 6 12.2 11 8 11C3.8 11 1 6 1 6Z"
+                            stroke="#808191"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <ellipse
+                            cx="8.00008"
+                            cy="6.00004"
+                            rx="2.1"
+                            ry="2.14286"
+                            stroke="#808191"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                        <div class="reaction-item-number">23</div>
+                      </div>
+                      <div class="reaction-item">
+                        <svg
+                          width="14"
+                          height="14"
+                          viewBox="0 0 14 14"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M13.2503 4.62997L9.47416 4.05515L7.78468 0.469621C7.48896 -0.15654 6.5108 -0.15654 6.21508 0.469621L4.52648 4.05515L0.749444 4.62997C0.0346335 4.73907 -0.254965 5.66318 0.264738 6.19491L2.99799 8.98559L2.35317 12.9268C2.23156 13.6731 2.98049 14.2461 3.62268 13.8931L6.99988 12.033L10.378 13.894C11.0149 14.2433 11.77 13.6795 11.6475 12.9277L11.0026 8.98651L13.7359 6.19583C14.2547 5.66318 13.9651 4.73907 13.2503 4.62997Z"
+                            fill="#808191"
+                          />
+                        </svg>
+
+                        <div class="reaction-item-number">23</div>
+                      </div>
+                      <div class="reaction-item">
+                        <svg
+                          width="14"
+                          height="14"
+                          viewBox="0 0 14 14"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M7 0C3.15 0 0 2.7125 0 6.125C0 9.5375 3.15 12.25 7 12.25C7.35 12.25 7.7 12.25 7.9625 12.1625L12.25 14V10.15C13.3 9.1 14 7.7 14 6.125C14 2.7125 10.85 0 7 0Z"
+                            fill="#808191"
+                          />
+                        </svg>
+                        <div class="reaction-item-number">23</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="post-trending-tags">
+                  <div class="post-trending-tags-text">Trending Tags</div>
+                  <div class="post-trending-tags-items-main">
+                    <div class="post-trending-tag-item">
+                      <div class="tag-item-trend">
+                        <div class="tag-item-left">
+                          <img
+                            class="tag-trend-pic"
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/800px-JavaScript-logo.png"
+                            width="64px"
+                            height="64px"
+                            alt=""
+                          />
+
+                          <div>
+                            <div class="tag-trend-name">JavaScript</div>
+                            <div>
+                              <div class="tag-trend-articles">
+                                <svg
+                                  width="8"
+                                  height="8"
+                                  viewBox="0 0 8 8"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <circle cx="4" cy="4" r="4" fill="#FF754C" />
+                                </svg>
+
+                                <div class="tag-art">
+                                  2.8k Articles this week
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="tag-item-selected">
+                          <svg
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <rect
+                              width="24"
+                              height="24"
+                              rx="12"
+                              fill="#7FBA7A"
+                            />
+                            <path
+                              d="M10.2 13.3334L7.8 10.9334L6 12.7334L10.2 16.9334L18 9.13337L16.2 7.33337L10.2 13.3334Z"
+                              fill="white"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                      <div class="tag-item-trend">
+                        <div class="tag-item-left">
+                          <img
+                            class="tag-trend-pic"
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/800px-JavaScript-logo.png"
+                            width="64px"
+                            height="64px"
+                            alt=""
+                          />
+
+                          <div>
+                            <div class="tag-trend-name">JavaScript</div>
+                            <div>
+                              <div class="tag-trend-articles">
+                                <svg
+                                  width="8"
+                                  height="8"
+                                  viewBox="0 0 8 8"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <circle cx="4" cy="4" r="4" fill="#FF754C" />
+                                </svg>
+
+                                <div class="tag-art">
+                                  2.8k Articles this week
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="tag-item-selectd">
+                          <svg
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <rect
+                              width="24"
+                              height="24"
+                              rx="12"
+                              fill="#7FBA7A"
+                            />
+                            <path
+                              d="M10.2 13.3334L7.8 10.9334L6 12.7334L10.2 16.9334L18 9.13337L16.2 7.33337L10.2 13.3334Z"
+                              fill="white"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="post-trending-tag-item">
+                      <div class="tag-item-trend">
+                        <div class="tag-item-left">
+                          <img
+                            class="tag-trend-pic"
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/800px-JavaScript-logo.png"
+                            width="64px"
+                            height="64px"
+                            alt=""
+                          />
+
+                          <div>
+                            <div class="tag-trend-name">JavaScript</div>
+                            <div>
+                              <div class="tag-trend-articles">
+                                <svg
+                                  width="8"
+                                  height="8"
+                                  viewBox="0 0 8 8"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <circle cx="4" cy="4" r="4" fill="#FF754C" />
+                                </svg>
+
+                                <div class="tag-art">
+                                  2.8k Articles this week
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="tag-item-add">
+                          <svg
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <g clip-path="url(#clip0_230_74687)">
+                              <circle cx="12" cy="12" r="12" fill="#6C5DD3" />
+                              <path
+                                d="M12 6V18"
+                                stroke="white"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              />
+                              <path
+                                d="M18 12H6"
+                                stroke="white"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              />
+                            </g>
+                            <defs>
+                              <clipPath id="clip0_230_74687">
+                                <rect width="24" height="24" fill="white" />
+                              </clipPath>
+                            </defs>
+                          </svg>
+                        </div>
+                      </div>
+                      <div class="tag-item-trend">
+                        <div class="tag-item-left">
+                          <img
+                            class="tag-trend-pic"
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/800px-JavaScript-logo.png"
+                            width="64px"
+                            height="64px"
+                            alt=""
+                          />
+
+                          <div>
+                            <div class="tag-trend-name">JavaScript</div>
+                            <div>
+                              <div class="tag-trend-articles">
+                                <svg
+                                  width="8"
+                                  height="8"
+                                  viewBox="0 0 8 8"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <circle cx="4" cy="4" r="4" fill="#FF754C" />
+                                </svg>
+
+                                <div class="tag-art">
+                                  2.8k Articles this week
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="tag-item-add">
+                          <svg
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <g clip-path="url(#clip0_230_74687)">
+                              <circle cx="12" cy="12" r="12" fill="#6C5DD3" />
+                              <path
+                                d="M12 6V18"
+                                stroke="white"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              />
+                              <path
+                                d="M18 12H6"
+                                stroke="white"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              />
+                            </g>
+                            <defs>
+                              <clipPath id="clip0_230_74687">
+                                <rect width="24" height="24" fill="white" />
+                              </clipPath>
+                            </defs>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="post-saved">
+                  <div class="post-heading">
+                    <div class="post-creator">
+                      <svg
+                        width="48"
+                        height="48"
+                        viewBox="0 0 48 48"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <circle cx="24" cy="24" r="24" fill="#0049C6" />
+                        <path
+                          d="M36.9037 26.7907V29.1196L33.2616 32.5232L24.0299 23.3738V16.7198L30.4673 13.9636V20.4116L36.9037 26.7907Z"
+                          fill="#A0D7E7"
+                        />
+                        <path
+                          d="M33.2615 32.5232L28.4512 36.9863L17.5802 26.2122V13.9636L24.0299 16.7198V23.3738L33.2615 32.5232Z"
+                          fill="#A0D7E7"
+                        />
+                        <path
+                          d="M28.4471 36.9863L25.0774 40.1322C24.486 40.6838 23.5636 40.6838 22.9722 40.1322L11.1428 29.1196V13.5222C11.1435 13.0101 11.404 12.5326 11.836 12.2516C12.268 11.9706 12.8136 11.9237 13.2879 12.1269L17.5802 13.9636V26.2122L28.4471 36.9863Z"
+                          fill="#3F8CFF"
+                        />
+                        <path
+                          d="M36.9037 13.5222V26.7907L30.4673 20.4116V13.9636L34.7585 12.1269C35.2329 11.9237 35.7785 11.9706 36.2105 12.2516C36.6425 12.5326 36.903 13.0101 36.9037 13.5222Z"
+                          fill="#3F8CFF"
+                        />
+                      </svg>
+                      <div class="creator-info">
+                        <div class="creator-name">Đặng Tuấn Phong</div>
+                        <div class="post-time">12 minus ago</div>
+                      </div>
+                    </div>
+                    <div class="post-btn-save">
+                      <svg
+                        width="16"
+                        height="19"
+                        viewBox="0 0 16 19"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M14.6737 17.9194L8.32768 13.4505L1.98169 17.9194V3.61903C1.98169 3.14494 2.17272 2.69027 2.51275 2.35504C2.85278 2.01981 3.31396 1.83148 3.79483 1.83148H12.8605C13.3414 1.83148 13.8026 2.01981 14.1426 2.35504C14.4826 2.69027 14.6737 3.14494 14.6737 3.61903V17.9194Z"
+                          fill="#FBCC13"
+                          stroke="#FBCC13"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="post-body">
+                    <div class="post-title">
+                      Why You Should Use Node.js for Ecommerce: Pros and Cons
+                    </div>
+                    <div class="post-paragraph">
+                      Node.js is a JavaScript runtime environment which
+                      developers use to build scalable network applications.
+                      <br />
+                      You can use it in various software, including ecommerce
+                      platforms.
+                      <br />To deliver high performance …
+                    </div>
+                    <div class="creator-language">
+                      <div class="programing-language">JavaScript</div>
+                      <div class="programing-language">Node JS</div>
+
+                      <div class="programing-language">Express JS</div>
+
+                      <div class="programing-language">+3</div>
+                    </div>
+                  </div>
+                  <div class="post-footer">
+                    <div class="post-reaction">
+                      <div class="reaction-item">
+                        <svg
+                          width="16"
+                          height="12"
+                          viewBox="0 0 16 12"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M1 6C1 6 3.8 1 8 1C12.2 1 15 6 15 6C15 6 12.2 11 8 11C3.8 11 1 6 1 6Z"
+                            stroke="#808191"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <ellipse
+                            cx="8.00008"
+                            cy="6.00004"
+                            rx="2.1"
+                            ry="2.14286"
+                            stroke="#808191"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                        <div class="reaction-item-number">23</div>
+                      </div>
+                      <div class="reaction-item">
+                        <svg
+                          width="14"
+                          height="14"
+                          viewBox="0 0 14 14"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M13.2503 4.62997L9.47416 4.05515L7.78468 0.469621C7.48896 -0.15654 6.5108 -0.15654 6.21508 0.469621L4.52648 4.05515L0.749444 4.62997C0.0346335 4.73907 -0.254965 5.66318 0.264738 6.19491L2.99799 8.98559L2.35317 12.9268C2.23156 13.6731 2.98049 14.2461 3.62268 13.8931L6.99988 12.033L10.378 13.894C11.0149 14.2433 11.77 13.6795 11.6475 12.9277L11.0026 8.98651L13.7359 6.19583C14.2547 5.66318 13.9651 4.73907 13.2503 4.62997Z"
+                            fill="#808191"
+                          />
+                        </svg>
+
+                        <div class="reaction-item-number">23</div>
+                      </div>
+                      <div class="reaction-item">
+                        <svg
+                          width="14"
+                          height="14"
+                          viewBox="0 0 14 14"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M7 0C3.15 0 0 2.7125 0 6.125C0 9.5375 3.15 12.25 7 12.25C7.35 12.25 7.7 12.25 7.9625 12.1625L12.25 14V10.15C13.3 9.1 14 7.7 14 6.125C14 2.7125 10.85 0 7 0Z"
+                            fill="#808191"
+                          />
+                        </svg>
+                        <div class="reaction-item-number">23</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="trending-blog">
+                <div class="list-choice">
+                  <div class="list-choice-title">
+                    <div  class="choice-default">1 Week</div>
+                    <svg
+                      width="14"
+                      height="8"
+                      viewBox="0 0 14 8"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M13 1L7 7L1 1"
+                        stroke="white"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </div>
+                  <div class="list-choice-objects ">
+                    <div
+                      data-value="1"
+                      class="choice checked"
+                    >
+                      1 Week
+                    </div>
+                    <div data-value="2" class="choice">
+                      1 Month
+                    </div>
+
+                    <div data-value="3" class="choice">
+                      3 Months
+                    </div>
+
+                    <div data-value="4" class="choice">
+                      6 Months
+                    </div>
+                  </div>
+                </div>
+                <div class="top-trending-text">Top Trending Now</div>
+
+                <div class="list-top-trending">
+                  <div class="top-trending-post">
+                    <img
+                      class="top-trending-pic"
+                      src="https://blog.haposoft.com/content/images/2020/07/1_LyZcwuLWv2FArOumCxobpA.png"
+                      width="327px"
+                      height="172px"
+                      alt=""
+                    />
+                    <div class="top-trending-container">
+                      <div class="top-trending-title">
+                        Why You Should Use Node.js for Ecommerce: Pros and Cons
+                      </div>
+                      <div class="creator-language">
+                        <div class="programing-language">JavaScript</div>
+                        <div class="programing-language">Node JS</div>
+                      </div>
+                      <div class="top-trending-creator">
+                        <img
+                          src="https://ps.w.org/user-avatar-reloaded/assets/icon-256x256.png?rev=2540745"
+                          width="32px"
+                          height="32px"
+                          alt=""
+                        />
+                        <div class="top-trending-creator-info">
+                          <div class="top-trending-creator-name">
+                            Gabriel Derickson
+                          </div>
+                          <div class="top-trending-creator-sub">
+                            536 followers
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="top-trending-post">
+                    <div class="top-trending-container">
+                      <div class="top-trending-title tt-item">
+                        Why You Should Use Node.js for Ecommerce: Pros and Cons
+                      </div>
+                      <div class="creator-language">
+                        <div class="programing-language">JavaScript</div>
+                        <div class="programing-language">Node JS</div>
+                      </div>
+                      <div class="top-trending-creator">
+                        <img
+                          src="https://ps.w.org/user-avatar-reloaded/assets/icon-256x256.png?rev=2540745"
+                          width="32px"
+                          height="32px"
+                          alt=""
+                        />
+                        <div class="top-trending-creator-info">
+                          <div class="top-trending-creator-name">
+                            Gabriel Derickson
+                          </div>
+                          <div class="top-trending-creator-sub">
+                            536 followers
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
